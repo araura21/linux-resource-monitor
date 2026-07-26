@@ -2,9 +2,15 @@
 
 import sqlite3
 
+def get_connection():
+    conn = sqlite3.connect('monitor.db')
+    conn.execute("PRAGMA foreign_keys = ON")
+    return conn
+
 def init_db():
     conn = sqlite3.connect('monitor.db')
     cursor = conn.cursor()
+    cursor.execute("PRAGMA foreign_keys = ON")
 
     # Tabla principal de monitoreos
     cursor.execute('''
@@ -13,25 +19,23 @@ def init_db():
         fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         hostname TEXT,
         comentario TEXT,
-        
+        etiqueta TEXT,
+
         cpu_nucleos INTEGER,
         cpu_frecuencia REAL,
         cpu_uso REAL,
-        
+
         mem_total REAL,
         mem_usada REAL,
         mem_libre REAL,
         mem_swap REAL,
         mem_porcentaje REAL,
-        
+
         disco_total REAL,
         disco_usado REAL,
         disco_libre REAL,
         disco_porcentaje REAL,
-        
-        bytes_enviados REAL,
-        bytes_recibidos REAL,
-        
+
         load_1 REAL,
         load_5 REAL,
         load_15 REAL
@@ -61,6 +65,19 @@ def init_db():
         usuario TEXT,
         terminal TEXT,
         hora_inicio TEXT,
+        FOREIGN KEY (monitoreo_id) REFERENCES monitoreos(id) ON DELETE CASCADE
+    )
+    ''')
+
+    # Tabla de interfaces de red
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS interfaces_red (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        monitoreo_id INTEGER,
+        nombre_interfaz TEXT,
+        direccion_ip TEXT,
+        bytes_enviados REAL,
+        bytes_recibidos REAL,
         FOREIGN KEY (monitoreo_id) REFERENCES monitoreos(id) ON DELETE CASCADE
     )
     ''')

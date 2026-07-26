@@ -1,0 +1,53 @@
+Reporte de monitoreo del sistema
+Generado: 2026-07-26 13:23:08
+Monitoreo id: 1
+
+Datos del sistema:
+id: 1
+fecha: 2026-07-26 18:23:08
+hostname: Oswaldo
+comentario: nuevo
+etiqueta: etq
+cpu_nucleos: 12
+cpu_frecuencia: 2687.999
+cpu_uso: 0.0
+mem_total: 7828.64
+mem_usada: 560.53
+mem_libre: 7169.17
+mem_swap: 0.0
+mem_porcentaje: 7.16
+disco_total: 1006.85
+disco_usado: 2.27
+disco_libre: 953.37
+disco_porcentaje: 1.0
+load_1: None
+load_5: None
+load_15: None
+
+Procesos capturados:
+PID 3845     ps                   estado=R      usuario=ojtipan      cpu=400.0% mem=0.0%
+PID 3846     ps                   estado=R      usuario=ojtipan      cpu=400.0% mem=0.0%
+PID 3839     python3              estado=Sl     usuario=ojtipan      cpu=17.0% mem=0.1%
+PID 3822     bash                 estado=Ss+    usuario=ojtipan      cpu=5.6% mem=0.0%
+PID 3823     (udev-worker)        estado=S      usuario=root         cpu=0.9% mem=0.0%
+PID 3826     (udev-worker)        estado=S      usuario=root         cpu=0.4% mem=0.0%
+PID 3824     (udev-worker)        estado=S      usuario=root         cpu=0.4% mem=0.0%
+PID 3821     Relay(3822)          estado=S      usuario=root         cpu=0.4% mem=0.0%
+PID 3820     SessionLeader        estado=Ss     usuario=root         cpu=0.4% mem=0.0%
+PID 201      redis-server         estado=Ssl    usuario=redis        cpu=0.2% mem=0.2%
+PID 1        systemd              estado=Ss     usuario=root         cpu=0.0% mem=0.1%
+PID 48       systemd-journal      estado=S<s    usuario=root         cpu=0.0% mem=0.2%
+PID 108      systemd-udevd        estado=Ss     usuario=root         cpu=0.0% mem=0.0%
+PID 221      wsl-pro-service      estado=Ssl    usuario=root         cpu=0.0% mem=0.1%
+PID 1861     bash                 estado=Ss+    usuario=ojtipan      cpu=0.0% mem=0.0%
+PID 190      dbus-daemon          estado=Ss     usuario=message+     cpu=0.0% mem=0.0%
+PID 117      systemd-timesyn      estado=Ssl    usuario=systemd+     cpu=0.0% mem=0.1%
+PID 419      systemd              estado=Ss     usuario=ojtipan      cpu=0.0% mem=0.1%
+PID 218      systemd-logind       estado=Ss     usuario=root         cpu=0.0% mem=0.1%
+PID 237      rsyslogd             estado=Ssl    usuario=syslog       cpu=0.0% mem=0.0%
+
+Usuarios conectados:
+ojtipan en pts/1 desde 2026-07-26 10:38
+
+Interfaces de red:
+eth0 (172.24.77.201): enviados 936661.0 B, recibidos 52541718.0 B
