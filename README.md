@@ -12,6 +12,9 @@ A lo largo del desarrollo, se llevaron a cabo una serie de actividades estructur
 * **Control de Versiones:** Git y GitHub
 * **Lectura de hardware:** Análisis directo del sistema de archivos virtual (`/proc/cpuinfo`, `/proc/stat`, `/proc/meminfo`) y llamadas al sistema (`subprocess`).
 
+### Diagrama de Arquitectura
+![Diseño de la Estructura](Documentos/Diseño_estructura.png)
+
 ## Actividades Realizadas
 
 Durante el ciclo de desarrollo del proyecto, se ejecutaron las siguientes fases de implementación:
@@ -20,6 +23,9 @@ Durante el ciclo de desarrollo del proyecto, se ejecutaron las siguientes fases 
 * Se configuró el entorno colaborativo utilizando un repositorio en GitHub.
 * Se definió la estructura modular del proyecto, separando las responsabilidades de CPU, RAM, Sistema y Base de datos.
 * Se implementó una base de datos local utilizando **SQLite** (`monitor.db`), diseñando tablas para registrar el historial de monitoreos, procesos capturados y usuarios conectados.
+
+#### Diagrama Entidad-Relación
+![Entidad-Relación](Documentos/Entidad-relacion.png)
 
 ### 2. Lectura de CPU y RAM desde `/proc`
 * Se desarrolló el módulo `monitor_cpu.py` para analizar directamente `/proc/cpuinfo` (obteniendo el modelo, núcleos y frecuencia del procesador) y `/proc/stat` (calculando el porcentaje de uso de CPU en tiempo real).
